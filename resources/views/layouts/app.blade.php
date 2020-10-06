@@ -27,6 +27,49 @@
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
     <style type="text/css">
+        html,
+        body,
+        header,
+        .jarallax {
+        height: 600px;
+        min-height: 600px;
+        }
+    
+        @media (max-width: 740px) {
+    
+        html,
+        body,
+        header,
+        .jarallax {
+            height: 100%;
+            min-height: 100%;
+        }
+        }
+    
+        @media (min-width: 800px) and (max-width: 850px) {
+    
+        html,
+        body,
+        header,
+        .jarallax {
+            height: 100%;
+            min-height: 100%;
+        }
+        }
+    
+        @media (min-width: 1020px) and (max-width: 1500px) {
+    
+        html,
+        body,
+        header,
+        .jarallax {
+            height: 460px;
+            min-height: 460px;
+        }
+        }
+    
+    </style>
+
 </head>
 <body>
     <div id="app">
@@ -65,8 +108,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -85,5 +128,16 @@
             @yield('content')
         </main>
     </div>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{asset('js/mdb.min.js')}}"></script>
+    @stack('js')
 </body>
+
 </html>
